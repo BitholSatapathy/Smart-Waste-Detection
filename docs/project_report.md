@@ -4,13 +4,13 @@
 
 ## 1. Cover Page
 
-**Course**: Computer Vision & Deep Learning (Flipped Course Evaluation)  
+**Course**: Computer Vision  
 **Project Title**: Smart Waste Detection & Segregation System  
-**Student Name**: [Student Name Placeholder]  
-**Registration Number**: [Registration Number Placeholder]  
+**Student Name**: Bithol Satapathy  
+**Registration Number**: 24BAI10972  
 **Institution**: Vellore Institute of Technology (VIT)  
 **Department**: School of Computer Science and Engineering  
-**Academic Year**: 2025–2026  
+**Academic Year**: 2026–2027  
 **Submission Date**: September 11, 2026  
 **Evaluation Target Date**: September 18, 2026  
 
@@ -90,8 +90,8 @@ The system implements 5 major functional modules with 7 command-line operations:
 ## 5. Non-Functional Requirements
 
 1. **NFR-1: Low-Latency Inference Performance**
-   - The forward pass of the model must execute in under 20 ms per image on standard consumer laptop CPUs, supporting interactive real-time kiosk operation ($>50$ FPS).
-   - *Measured Realization*: Achieved **9.29 ms** mean forward-pass latency (~107.6 FPS) on a local consumer CPU.
+   - The system should provide practical single-image inference performance on a standard consumer computer, with latency measured and reported during evaluation.
+   - *Measured Realization*: Achieved **9.29 ms** mean forward-pass latency (~107.6 FPS) on a standard consumer computer CPU.
 
 2. **NFR-2: Fault Resilience & Input Validation**
    - The system must trap zero-byte files, non-image files, corrupted bitstreams, and truncated headers using custom `ImageValidationError` exceptions, providing clear error diagnostics without crashing.
@@ -231,11 +231,12 @@ stateDiagram-v2
 
 ### 9.1 Technology Stack & Environment
 - **Operating System**: Windows 11 (tested on standard 64-bit consumer architecture)
-- **Programming Language**: Python 3.10.11
-- **Deep Learning Framework**: PyTorch 2.2.0, Torchvision 0.17.0
-- **Computer Vision**: OpenCV 4.8.0, Pillow 9.5.0
-- **Data & Evaluation**: NumPy 1.24.3, scikit-learn 1.3.0, Pandas 2.0.0, Matplotlib 3.7.0
-- **Testing**: pytest 7.4.0
+- **Programming Language**: Python 3.14.6
+- **Deep Learning Framework**: PyTorch 2.14.0+cpu, Torchvision 0.29.0+cpu
+- **Computer Vision**: OpenCV 5.0.0, Pillow 11.1.0
+- **Data & Evaluation**: NumPy 2.5.1, scikit-learn 1.9.0, Pandas 2.2.3, Matplotlib 3.10.0
+- **Hardware & Device**: Standard Consumer CPU (CPU-only execution, CUDA was not available)
+- **Testing**: pytest 8.3.4
 
 ### 9.2 Modular File Organization
 
@@ -258,9 +259,9 @@ stateDiagram-v2
 The model was trained for 15 epochs using the prepared TrashNet training partition ($1,769$ images) with validation on the validation partition ($379$ images).
 
 - **Total Training Duration**: 6 minutes 54 seconds (executed entirely on local CPU)
-- **Initial Epoch 1 Performance**: Training Acc: 46.13%, Val Acc: 78.89%, Val Loss: 0.6120
+- **Initial Epoch 1 Performance**: Training Acc: 51.38%, Val Acc: 75.46%, Val Loss: 1.0851 (Training Loss: 1.4768)
 - **Best Validation Accuracy**: **87.34%** (Achieved at **Epoch 14**, Val Loss: 0.3970)
-- **Final Epoch 15 Performance**: Training Acc: 82.25%, Val Acc: 85.75%, Val Loss: 0.4431
+- **Final Epoch 15 Performance**: Training Acc: 82.25%, Val Acc: 85.75%, Val Loss: 0.4172 (Training Loss: 0.5847)
 - **Checkpointing**: The model weights from Epoch 14 were saved to `models/saved_models/mobilenetv2_waste.pth`.
 
 #### Training Accuracy & Loss Curves
@@ -310,7 +311,7 @@ The confusion matrix was plotted and exported to `reports/confusion_matrix.png` 
 
 #### Key Observations:
 1. **Paper and Cardboard High Separation**: Both classes achieved precision $>93\%$. Confusions were limited to thin packaging cartons resembling heavy paper stock.
-2. **Glass vs. Plastic Ambiguity**: 8 plastic items were misclassified as glass, and 7 glass items were misclassified as plastic. This constitutes the largest source of error in the system and is attributable to shared optical properties (transparency, specular glare, cylindrical bottle geometries).
+2. **Glass vs. Plastic Ambiguity**: Actual glass predicted as plastic = 8, and actual plastic predicted as glass = 4. This constitutes the largest source of cross-class confusion in the system and is attributable to shared optical properties (transparency, specular glare, cylindrical bottle geometries).
 3. **Trash Minority Class Performance**: Despite having only 20 test samples, the class-weighted loss function enabled the model to achieve 75.00% recall (15/20 correct). Misclassifications occurred primarily with crushed metal wrappers and complex composite plastic bags.
 
 ---
@@ -326,10 +327,10 @@ Inference latency was benchmarked by executing 50 consecutive forward passes wit
 | **Minimum Latency** | **7.34 ms** | Warm cache execution |
 | **Maximum Latency** | **13.69 ms** | Cold-start execution |
 | **Standard Deviation** | **1.06 ms** | Low latency variance |
-| **Evaluation Environment** | Intel Core i5-12450H CPU | Batch size = 1, Input = $224 \times 224 \times 3$ |
+| **Evaluation Environment** | Standard Consumer CPU | CPU-only, CUDA unavailable, Batch size = 1, Input = $224 \times 224 \times 3$ |
 
 > [!NOTE]
-> Latency benchmarks were conducted on the local development computer and strictly isolate the neural network forward pass from disk I/O, image loading, and OpenCV decoding. These results are specific to this hardware environment and are not claimed as universal hardware benchmarks.
+> The reported latency is forward-pass only, measured across 50 iterations on a standard consumer computer CPU, strictly excluding image loading, file decoding, and preprocessing. These results are specific to this execution environment and provide a practical baseline for edge CPU performance.
 
 ---
 
@@ -399,7 +400,7 @@ tests/test_preprocessor.py ... [100%]
 ## 12. Challenges Faced
 
 1. **Class Imbalance**: The TrashNet dataset exhibits substantial disparity between majority classes (`paper`: 594 images) and minority classes (`trash`: 137 images). Naive unweighted training resulted in lower recall on trash items. This was addressed by computing inverse-frequency loss weights ($w_c = \frac{N_{\text{total}}}{K \cdot N_c}$), yielding $w_{\text{trash}} = 3.0742$, which boosted trash test recall to 75.00%.
-2. **Visual Ambiguity Between Transparent Materials**: Clear PET plastic bottles and clear glass jars share high visual similarity, specular surface highlights, and transparency against white backgrounds. This caused mutual cross-misclassification (8 plastic as glass, 7 glass as plastic). Data augmentation with random rotations helped mitigate, though not completely eliminate, this optical ambiguity.
+2. **Visual Ambiguity Between Transparent Materials**: Clear PET plastic bottles and clear glass jars share high visual similarity, specular surface highlights, and transparency against white backgrounds. This caused cross-misclassification (actual glass predicted as plastic = 8, and actual plastic predicted as glass = 4). Data augmentation with random rotations helped mitigate, though not completely eliminate, this optical ambiguity.
 3. **Cardboard vs. Heavy Craft Paper Confusion**: Thin corrugated cardboard boxes and thick, unprinted craft paper sheets share similar brown fibrous textures. The model occasionally misclassified thin cardboard as paper.
 4. **Heterogeneous Composition of the "Trash" Category**: While classes such as `metal` and `glass` have relatively consistent surface textures, `trash` comprises diverse non-recyclables including snack bags, wrappers, and composite packaging. This intra-class diversity made learning a compact feature representation more difficult.
 5. **CPU-Only Training Constraints**: Training deep neural networks without a dedicated GPU requires careful parameter tuning. By freezing the MobileNetV2 backbone and training only the dense classification head with Adam ($lr=0.0005$), complete 15-epoch training was achieved in 6 minutes 54 seconds on a standard consumer CPU.

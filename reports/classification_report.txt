@@ -1,0 +1,17 @@
+Test Set Classification Report
+Model: mobilenetv2_waste.pth
+Timestamp: 2026-09-10T17:39:17.266294+00:00
+Overall Accuracy: 0.8681 (86.81%)
+
+              precision    recall  f1-score   support
+
+   cardboard       0.93      0.89      0.91        61
+       glass       0.87      0.83      0.85        75
+       metal       0.89      0.89      0.89        61
+       paper       0.93      0.90      0.91        89
+     plastic       0.81      0.88      0.84        73
+       trash       0.62      0.75      0.68        20
+
+    accuracy                           0.87       379
+   macro avg       0.84      0.85      0.85       379
+weighted avg       0.87      0.87      0.87       379

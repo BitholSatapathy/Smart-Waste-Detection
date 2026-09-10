@@ -1,0 +1,187 @@
+{
+  "model_architecture": "MobileNetV2",
+  "epochs_completed": 15,
+  "best_validation_accuracy": 0.87335,
+  "best_validation_epoch": 14,
+  "final_train_loss": 0.47503,
+  "final_train_accuracy": 0.8225,
+  "final_val_loss": 0.41718,
+  "final_val_accuracy": 0.85752,
+  "epoch_history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.47675,
+      "train_accuracy": 0.51385,
+      "validation_loss": 1.08509,
+      "validation_accuracy": 0.75462
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.98328,
+      "train_accuracy": 0.69192,
+      "validation_loss": 0.77642,
+      "validation_accuracy": 0.78364
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.78813,
+      "train_accuracy": 0.75297,
+      "validation_loss": 0.67281,
+      "validation_accuracy": 0.80475
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.6879,
+      "train_accuracy": 0.77784,
+      "validation_loss": 0.58892,
+      "validation_accuracy": 0.8153
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.6566,
+      "train_accuracy": 0.76823,
+      "validation_loss": 0.55988,
+      "validation_accuracy": 0.82322
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.60273,
+      "train_accuracy": 0.79254,
+      "validation_loss": 0.51464,
+      "validation_accuracy": 0.83377
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.59731,
+      "train_accuracy": 0.79084,
+      "validation_loss": 0.49678,
+      "validation_accuracy": 0.83641
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.5435,
+      "train_accuracy": 0.80724,
+      "validation_loss": 0.45665,
+      "validation_accuracy": 0.86016
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.49868,
+      "train_accuracy": 0.81685,
+      "validation_loss": 0.46687,
+      "validation_accuracy": 0.84169
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.53249,
+      "train_accuracy": 0.80215,
+      "validation_loss": 0.42368,
+      "validation_accuracy": 0.86807
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.50937,
+      "train_accuracy": 0.81176,
+      "validation_loss": 0.43823,
+      "validation_accuracy": 0.8628
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.4943,
+      "train_accuracy": 0.8208,
+      "validation_loss": 0.4282,
+      "validation_accuracy": 0.8496
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.48091,
+      "train_accuracy": 0.81854,
+      "validation_loss": 0.43577,
+      "validation_accuracy": 0.85224
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.48083,
+      "train_accuracy": 0.82024,
+      "validation_loss": 0.39695,
+      "validation_accuracy": 0.87335
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.47503,
+      "train_accuracy": 0.8225,
+      "validation_loss": 0.41718,
+      "validation_accuracy": 0.85752
+    }
+  ],
+  "history": {
+    "train_loss": [
+      1.4767509084289663,
+      0.9832812773433359,
+      0.788130699611101,
+      0.6879036436315442,
+      0.65659690587247,
+      0.6027308280451814,
+      0.5973081052337008,
+      0.5435015887712745,
+      0.49867706665418593,
+      0.5324902079279238,
+      0.5093699481070817,
+      0.4943005897488009,
+      0.48090849986111395,
+      0.4808293595497321,
+      0.47502999429718934
+    ],
+    "val_loss": [
+      1.0850870958418835,
+      0.7764246734276925,
+      0.6728090148487946,
+      0.5889243842114874,
+      0.559877551325393,
+      0.5146421952109224,
+      0.49678002985926606,
+      0.4566485230715105,
+      0.4668724324583693,
+      0.42368063196972366,
+      0.43822723611363634,
+      0.4282048137018108,
+      0.43577067935372404,
+      0.39695005382271115,
+      0.4171763194582393
+    ],
+    "train_acc": [
+      0.5138496325607688,
+      0.6919163369135105,
+      0.752967778405879,
+      0.7778405879027699,
+      0.7682306387789711,
+      0.7925381571509327,
+      0.7908422837761447,
+      0.8072357263990956,
+      0.8168456755228943,
+      0.8021481062747314,
+      0.8117580553985303,
+      0.8208027133973996,
+      0.8185415488976823,
+      0.8202374222724703,
+      0.8224985867721877
+    ],
+    "val_acc": [
+      0.7546174142480211,
+      0.783641160949868,
+      0.8047493403693932,
+      0.8153034300791556,
+      0.8232189973614775,
+      0.8337730870712401,
+      0.8364116094986808,
+      0.8601583113456465,
+      0.841688654353562,
+      0.8680738786279684,
+      0.862796833773087,
+      0.8496042216358839,
+      0.8522427440633246,
+      0.8733509234828496,
+      0.8575197889182058
+    ]
+  }
+}

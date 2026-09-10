@@ -1,0 +1,85 @@
+# Smart Waste Detection & Segregation System Configuration
+
+project:
+  name: "Smart Waste Detection & Segregation System"
+  version: "1.0.0"
+  course: "VITyarthi Flipped Course Evaluation"
+
+# Dataset settings and split ratios
+dataset:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  random_seed: 42
+  use_class_weights: true  # Counteracts TrashNet class imbalance via weighted CrossEntropyLoss
+
+# Model hyperparameters and input specs
+model:
+  architecture: "MobileNetV2"
+  image_size: [224, 224]
+  num_classes: 6
+  batch_size: 32
+  learning_rate: 0.0005
+  epochs: 15
+  dropout_rate: 0.3
+  saved_model_path: "models/saved_models/mobilenetv2_waste.pth"
+  class_indices_path: "models/class_indices.json"
+
+# Classes recognized by the system (standard TrashNet benchmark)
+classes:
+  - "cardboard"
+  - "glass"
+  - "metal"
+  - "paper"
+  - "plastic"
+  - "trash"
+
+# Waste Segregation & Decision Engine rules
+# Note: Primary segregation categories are semantic (Recyclable, General / Non-recyclable).
+# Actual physical bin colors and municipal sorting guidelines vary significantly by city and country;
+# display_color_hint is provided solely as an optional internal UI visualization attribute.
+decision_engine:
+  # Initial configurable heuristic threshold (not an absolute physical or scientific constant).
+  # Predictions with confidence below this threshold are flagged for manual verification.
+  default_confidence_threshold: 0.60
+  
+  category_mapping:
+    cardboard:
+      semantic_category: "Recyclable"
+      display_color_hint: "Blue"
+      action: "Flatten box to save volume. Ensure dry and free of food/grease contamination."
+      is_recyclable: true
+    glass:
+      semantic_category: "Recyclable"
+      display_color_hint: "Teal"
+      action: "Rinse container clean. Handle with care to prevent shattering. Do not mix ceramics or lightbulbs."
+      is_recyclable: true
+    metal:
+      semantic_category: "Recyclable"
+      display_color_hint: "Grey"
+      action: "Rinse food or beverage cans. Crush aluminum cans if feasible to optimize recycling volume."
+      is_recyclable: true
+    paper:
+      semantic_category: "Recyclable"
+      display_color_hint: "Blue"
+      action: "Keep dry and clean. Shred confidential documents before recycling. Soiled paper goes to General Waste."
+      is_recyclable: true
+    plastic:
+      semantic_category: "Recyclable"
+      display_color_hint: "Yellow"
+      action: "Empty liquid contents, rinse clean, and reattach screw cap. Check local resin code policies."
+      is_recyclable: true
+    trash:
+      semantic_category: "General / Non-recyclable"
+      display_color_hint: "Black"
+      action: "Residual non-recyclable refuse. Wrap or bag securely to maintain sanitary conditions."
+      is_recyclable: false
+
+# Persistence and Reports
+paths:
+  history_csv: "reports/history.csv"
+  confusion_matrix_plot: "reports/confusion_matrix.png"
+  classification_report_json: "reports/classification_report.json"
+  sample_images_dir: "data/sample_test_images"

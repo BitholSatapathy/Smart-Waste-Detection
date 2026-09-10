@@ -1,0 +1,79 @@
+timestamp,image_path,predicted_class,confidence,status,waste_stream,target_bin,is_recyclable
+2026-09-10 16:38:17,cardboard_box.jpg,glass,0.4951,UNCERTAIN,Unverified (Low Confidence),Manual Inspection Required,True
+2026-09-10 16:38:17,glass_bottle.jpg,metal,0.6505,CONFIDENT,Dry Recyclable,Grey Bin (Metal Scrap),True
+2026-09-10 16:38:17,metal_can.jpg,trash,0.5924,UNCERTAIN,Unverified (Low Confidence),Manual Inspection Required,False
+2026-09-10 16:38:17,paper_sheet.jpg,glass,0.5253,UNCERTAIN,Unverified (Low Confidence),Manual Inspection Required,True
+2026-09-10 16:38:17,plastic_bottle.jpg,cardboard,0.5258,UNCERTAIN,Unverified (Low Confidence),Manual Inspection Required,True
+2026-09-10 16:38:17,trash_wrapper.jpg,paper,0.7036,CONFIDENT,Dry Recyclable,Blue Bin (Paper),True
+2026-09-10 16:38:40,plastic_bottle.jpg,cardboard,0.5258,UNCERTAIN,Unverified (Low Confidence),Manual Inspection Required,True
+2026-09-10 16:38:53,cardboard_box.jpg,glass,0.4951,UNCERTAIN,Unverified (Low Confidence),Manual Inspection Required,True
+2026-09-10 16:38:53,glass_bottle.jpg,metal,0.6505,CONFIDENT,Dry Recyclable,Grey Bin (Metal Scrap),True
+2026-09-10 16:38:53,metal_can.jpg,trash,0.5924,UNCERTAIN,Unverified (Low Confidence),Manual Inspection Required,False
+2026-09-10 16:38:53,paper_sheet.jpg,glass,0.5253,UNCERTAIN,Unverified (Low Confidence),Manual Inspection Required,True
+2026-09-10 16:38:53,plastic_bottle.jpg,cardboard,0.5258,UNCERTAIN,Unverified (Low Confidence),Manual Inspection Required,True
+2026-09-10 16:38:53,trash_wrapper.jpg,paper,0.7036,CONFIDENT,Dry Recyclable,Blue Bin (Paper),True
+2026-09-10 16:49:33,cardboard_box.jpg,glass,0.4951,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 16:49:33,glass_bottle.jpg,metal,0.6505,CONFIDENT,Recyclable,Grey,True
+2026-09-10 16:49:33,metal_can.jpg,trash,0.5924,UNCERTAIN,Manual Verification Required,Yellow / Warning,False
+2026-09-10 16:49:33,paper_sheet.jpg,glass,0.5253,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 16:49:33,plastic_bottle.jpg,cardboard,0.5258,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 16:49:33,trash_wrapper.jpg,paper,0.7036,CONFIDENT,Recyclable,Blue,True
+2026-09-10 16:50:23,cardboard_box.jpg,glass,0.4951,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 16:50:23,glass_bottle.jpg,metal,0.6505,CONFIDENT,Recyclable,Grey,True
+2026-09-10 16:50:23,metal_can.jpg,trash,0.5924,UNCERTAIN,Manual Verification Required,Yellow / Warning,False
+2026-09-10 16:50:23,paper_sheet.jpg,glass,0.5253,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 16:50:23,plastic_bottle.jpg,cardboard,0.5258,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 16:50:23,trash_wrapper.jpg,paper,0.7036,CONFIDENT,Recyclable,Blue,True
+2026-09-10 16:57:39,cardboard_box.jpg,glass,0.4951,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 16:57:39,glass_bottle.jpg,metal,0.6505,CONFIDENT,Recyclable,Grey,True
+2026-09-10 16:57:39,metal_can.jpg,trash,0.5924,UNCERTAIN,Manual Verification Required,Yellow / Warning,False
+2026-09-10 16:57:39,paper_sheet.jpg,glass,0.5253,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 16:57:39,plastic_bottle.jpg,cardboard,0.5258,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 16:57:39,trash_wrapper.jpg,paper,0.7036,CONFIDENT,Recyclable,Blue,True
+2026-09-10 17:18:41,cardboard_box.jpg,glass,0.4951,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:18:41,glass_bottle.jpg,metal,0.6505,CONFIDENT,Recyclable,Grey,True
+2026-09-10 17:18:41,metal_can.jpg,trash,0.5924,UNCERTAIN,Manual Verification Required,Yellow / Warning,False
+2026-09-10 17:18:41,paper_sheet.jpg,glass,0.5253,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:18:41,plastic_bottle.jpg,cardboard,0.5258,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:18:41,trash_wrapper.jpg,paper,0.7036,CONFIDENT,Recyclable,Blue,True
+2026-09-10 17:43:52,cardboard101.jpg,cardboard,0.9894,CONFIDENT,Recyclable,Blue,True
+2026-09-10 17:44:14,glass10.jpg,glass,0.7651,CONFIDENT,Recyclable,Teal,True
+2026-09-10 17:44:29,metal104.jpg,glass,0.3039,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:44:41,metal122.jpg,metal,0.6009,CONFIDENT,Recyclable,Grey,True
+2026-09-10 17:45:05,paper100.jpg,paper,0.5807,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:45:19,paper106.jpg,paper,0.9066,CONFIDENT,Recyclable,Blue,True
+2026-09-10 17:45:30,plastic100.jpg,plastic,0.9402,CONFIDENT,Recyclable,Yellow,True
+2026-09-10 17:45:42,trash102.jpg,trash,0.4823,UNCERTAIN,Manual Verification Required,Yellow / Warning,False
+2026-09-10 17:45:56,trash111.jpg,trash,0.8128,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash102.jpg,trash,0.4823,UNCERTAIN,Manual Verification Required,Yellow / Warning,False
+2026-09-10 17:46:09,trash111.jpg,trash,0.8128,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash134.jpg,cardboard,0.447,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:46:09,trash136.jpg,trash,0.6379,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash137.jpg,trash,0.9395,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash18.jpg,trash,0.9199,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash23.jpg,trash,0.9003,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash42.jpg,trash,0.9434,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash44.jpg,trash,0.9657,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash53.jpg,glass,0.366,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:46:09,trash59.jpg,trash,0.922,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash66.jpg,trash,0.8456,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash67.jpg,trash,0.7179,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash8.jpg,trash,0.8335,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash85.jpg,trash,0.6247,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash89.jpg,trash,0.6874,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash92.jpg,cardboard,0.6269,CONFIDENT,Recyclable,Blue,True
+2026-09-10 17:46:09,trash93.jpg,metal,0.391,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:46:09,trash96.jpg,trash,0.9391,CONFIDENT,General / Non-recyclable,Black,False
+2026-09-10 17:46:09,trash97.jpg,plastic,0.501,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:47:12,cardboard_box.jpg,glass,0.4951,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:47:12,glass_bottle.jpg,metal,0.6505,CONFIDENT,Recyclable,Grey,True
+2026-09-10 17:47:12,metal_can.jpg,trash,0.5924,UNCERTAIN,Manual Verification Required,Yellow / Warning,False
+2026-09-10 17:47:12,paper_sheet.jpg,glass,0.5253,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:47:12,plastic_bottle.jpg,cardboard,0.5258,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 17:47:12,trash_wrapper.jpg,paper,0.7036,CONFIDENT,Recyclable,Blue,True
+2026-09-10 20:20:26,cardboard_box.jpg,glass,0.4951,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 20:20:26,glass_bottle.jpg,metal,0.6505,CONFIDENT,Recyclable,Grey,True
+2026-09-10 20:20:26,metal_can.jpg,trash,0.5924,UNCERTAIN,Manual Verification Required,Yellow / Warning,False
+2026-09-10 20:20:26,paper_sheet.jpg,glass,0.5253,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 20:20:26,plastic_bottle.jpg,cardboard,0.5258,UNCERTAIN,Manual Verification Required,Yellow / Warning,True
+2026-09-10 20:20:26,trash_wrapper.jpg,paper,0.7036,CONFIDENT,Recyclable,Blue,True

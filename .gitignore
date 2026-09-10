@@ -1,0 +1,93 @@
+# ==============================================================================
+# Git Ignore Configuration - Smart Waste Detection & Segregation System
+# ==============================================================================
+
+# Python Bytecode, Optimization & Cache Files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+
+# Python Packaging & Distribution
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Code Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# IDE & Text Editor Configuration
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Operating System Artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Thumbs.db:encryptable
+desktop.ini
+$RECYCLE.BIN/
+
+# Temporary Scratch Files & Developer Scripts
+scratch/
+tmp/
+temp/
+
+# Large Datasets & Processed Partitions (Preserve folder structure via .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Large Deep Learning Model Binaries (Preserve folder structure via .gitkeep)
+models/saved_models/*.pt
+models/saved_models/*.pth
+models/saved_models/*.h5
+models/saved_models/*.keras
+models/saved_models/*.onnx
+models/saved_models/*.tflite
+!models/saved_models/.gitkeep
+
+# Logs & Jupyter Checkpoints
+*.log
+.ipynb_checkpoints/

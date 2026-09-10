@@ -1,0 +1,7 @@
+actual_class \ predicted_class,cardboard,glass,metal,paper,plastic,trash
+cardboard,54,0,0,4,2,1
+glass,0,62,3,0,8,2
+metal,0,2,54,0,4,1
+paper,2,2,2,80,0,3
+plastic,0,4,1,2,64,2
+trash,2,1,1,0,1,15
